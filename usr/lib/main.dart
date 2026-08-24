@@ -10,7 +10,7 @@ class JuiLogoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Talha JUI Logo',
+      title: 'Jamiati Golden Logo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
@@ -32,9 +32,9 @@ class LogoScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text('طلحہ - جے یو آئی لوگو', style: TextStyle(fontFamily: 'NotoNastaliqUrdu', fontWeight: FontWeight.bold)),
+        title: const Text('جمیعتی - گولڈن لوگو', style: TextStyle(fontFamily: 'NotoNastaliqUrdu', fontWeight: FontWeight.bold)),
         backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        foregroundColor: const Color(0xFFFFD700), // Golden color for app bar text
         centerTitle: true,
       ),
       body: Center(
@@ -71,32 +71,51 @@ class LogoScreen extends StatelessWidget {
                           Expanded(child: Container(color: Colors.white)),
                         ],
                       ),
-                      // Overlay with Text
+                      // Overlay with Golden Text and Emblem
                       Center(
                         child: Container(
-                          padding: const EdgeInsets.all(20),
+                          padding: const EdgeInsets.all(25),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.black.withOpacity(0.85),
                             shape: BoxShape.circle,
-                            border: Border.all(color: Colors.black, width: 4),
+                            border: Border.all(
+                              color: const Color(0xFFFFD700), // Gold
+                              width: 6,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xFFFFD700).withOpacity(0.4),
+                                blurRadius: 15,
+                                spreadRadius: 2,
+                              ),
+                            ],
                           ),
                           child: const Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'طلحہ',
+                                'جمیعتی',
                                 style: TextStyle(
-                                  fontSize: 60,
+                                  fontSize: 55,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                  color: Color(0xFFFFD700), // Golden text
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.black,
+                                      blurRadius: 4,
+                                      offset: Offset(2, 2),
+                                    ),
+                                  ],
                                 ),
                               ),
+                              SizedBox(height: 5),
                               Text(
-                                'جے یو آئی',
+                                'جمعیت علمائے اسلام',
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  fontSize: 24,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black54,
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -110,11 +129,10 @@ class LogoScreen extends StatelessWidget {
               const SizedBox(height: 40),
               ElevatedButton.icon(
                 onPressed: () {},
-                icon: const Icon(Icons.download),
-                label: const Text('محفوظ کریں'),
+                icon: const Icon(Icons.star, color: Colors.black),
+                label: const Text('پروفائل پر لگائیں', style: TextStyle(color: Colors.black)),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  foregroundColor: Colors.white,
+                  backgroundColor: const Color(0xFFFFD700), // Golden button
                   padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                   textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
